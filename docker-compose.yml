@@ -1,21 +1,11 @@
-version: "3.1"
-
+version: '3.1'
 services:
   db:
-    image: mysql:5.7
-    container_name: mysql_db
-    restart: always
+    image: mysql:latest
     environment:
-      MYSQL_DATABASE: "countrycapitaldb"
-      MYSQL_USER: "user"
-      MYSQL_PASSWORD: "password"
-      MYSQL_ROOT_PASSWORD: "password"
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: country_capital_db
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
     ports:
       - "3306:3306"
-    expose:
-      - "3306"
-    volumes:
-      - mydb:/var/lib/mysql
-
-volumes:
-  mydb:
