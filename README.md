@@ -1,30 +1,45 @@
-# Country_Capital
+# Country Capital Microservice
 
-Country_Capital is a Spring Boot microservice designed to manage and retrieve country-capital information. It offers a simple and secure API for saving country-capital pairs and retrieving the capital of a specific country. The microservice utilizes MySQL for data persistence and is secured using Basic Authentication.
+This microservice manages the relationships between countries and their capitals. Built with Spring Boot and MySQL, it supports operations to save and retrieve capital information for a given country. The service is secured with Basic Authentication and is Dockerized for easy setup and deployment.
 
-## Features
+## Prerequisites
 
-- **Save Country-Capital Information:**
-  - Securely save country-capital pairs to a MySQL database.
-- **Retrieve Capital by Country:**
-  - Retrieve the capital of a specific country using its name.
-- **Security:**
-  - APIs are secured using Basic Authentication to ensure data protection and secure access.
-- **Containerization:**
-  - Both the microservice and the MySQL database are containerized using Docker, simplifying deployment and environment consistency.
+To run this project, you will need Docker and Docker Compose installed on your system. This ensures you can easily set up the MySQL database and run the Spring Boot application without needing to manually configure the environment and dependencies.
 
 ## Getting Started
 
-These instructions will get your copy of the project up and running on your local machine for development and testing purposes.
+Follow these steps to get the microservice up and running on your local machine:
 
-### Prerequisites
+### 1. Clone the Repository
 
-What you need to install the software:
+First, clone this repository to your local machine:
+```git clone https://github.com/Adnanrobi/countrycapital.git```
 
-- Docker
-- Java 8 or later
-- Maven (if you want to build the project manually)
+### 2. Start the Application and Database with Docker Compose
+From the root directory of the project, run:
+```docker-compose up```
+This command builds the Docker image for the Spring Boot application and starts both the application and the MySQL database containers. The docker-compose.yml file in the project directory contains all the necessary configuration.
 
-### Installing
+### 3. Accessing the Application
+Once the containers are up and running, the microservice is accessible at:
+```http://localhost:8080```
+## API Endpoints
 
-Follow these steps to get your development environment running:
+#### Save Country-Capital Information
+
+- **HTTP Method:** `POST`
+- **Path:** `/api/country/save`
+- **Description:** Save country-capital pairs to the database.
+- **Authentication:** Requires Basic Authentication.
+
+#### Retrieve Capital by Country
+
+- **HTTP Method:** `GET`
+- **Path:** `/api/country/{countryName}`
+- **Description:** Retrieve the capital of a specific country from the database.
+- **URL Parameter:** `countryName` - The name of the country for which to retrieve the capital.
+- **Response:** A JSON containing the capital in the following format: `{"capital": "Dhaka"}`
+- **Authentication:** Requires Basic Authentication.
+
+## Testing
+You can test the API using tools like Postman. Make sure to include Basic Authentication headers with your requests.
