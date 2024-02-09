@@ -1,4 +1,4 @@
-package com.example.country_capital;
+package com.example.countrycapital;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
