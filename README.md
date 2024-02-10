@@ -4,7 +4,7 @@ This microservice manages the relationships between countries and their capitals
 
 ## Prerequisites
 
-To run this project, you will need Docker and Docker Compose installed on your system. This ensures you can easily set up the MySQL database and run the Spring Boot application without needing to manually configure the environment and dependencies.
+To run this project, you will need Docker and Docker Compose installed on your system preferably the latest versions. This ensures you can easily set up the MySQL database and run the Spring Boot application without needing to configure the environment and dependencies manually.
 
 ## Getting Started
 
@@ -17,8 +17,10 @@ First, clone this repository to your local machine:
 
 ### 2. Start the Application and Database with Docker Compose
 From the root directory of the project, run:
-```docker-compose up```
-This command builds the Docker image for the Spring Boot application and starts both the application and the MySQL database containers. The docker-compose.yml file in the project directory contains all the necessary configuration.
+
+```./mvnw clean package -DskipTests``` to build the project using Maven Wrapper.
+
+```docker-compose up``` to build the Docker image for the Spring Boot application and start both the application and the MySQL database containers. The docker-compose.yml file in the project directory contains all the necessary configurations.
 
 ### 3. Accessing the Application
 Once the containers are up and running, the microservice is accessible at:
