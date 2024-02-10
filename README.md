@@ -45,3 +45,8 @@ Once the containers are up and running, the microservice is accessible at:
 
 ## Testing
 You can test the API using tools like Postman. Make sure to include Basic Authentication headers with your requests.
+
+## Assumptions:
+- **CSRF protection is disabled for simplicity as I considered a local development environment.
+- **Used only one user for authentication which is predefined in memory, for a production system it should be implemented using a database to manage users
+- **Password is hardcoded for simplicity
